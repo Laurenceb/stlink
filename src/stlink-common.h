@@ -97,6 +97,7 @@ extern "C" {
 // stm32 chipids, only lower 12 bits..
 #define STM32_CHIPID_F1_MEDIUM 0x410
 #define STM32_CHIPID_F2 0x411
+#define STM32_CHIPID_F3 0x422
 #define STM32_CHIPID_F1_LOW 0x412
 #define STM32_CHIPID_F4 0x413
 #define STM32_CHIPID_F1_HIGH 0x414
@@ -207,6 +208,15 @@ static const chip_params_t devices[] = {
                     .sram_size = 0x2000,
                     .bootrom_base = 0x1ffff000,
                     .bootrom_size = 0x800
+        },
+        {
+            .chip_id = 0x422,
+                    .description = "F3 device",
+                    .flash_size_reg = 0x1ffff7cc,
+                    .flash_pagesize = 0x800,
+                    .sram_size = 0xC000,
+                    .bootrom_base = 0x1fffb000,
+                    .bootrom_size = 0x4800
         },
         {
             .chip_id = 0x428,
